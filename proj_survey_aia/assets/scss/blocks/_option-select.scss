@@ -55,10 +55,9 @@
     }
 }
 .bl_optScale {
-    [class^="bl_optScale_A"] {
+    &_list {
         display: flex;
         gap: var(--gap-xs);
-
         .el_select { flex: 1; }
     }
     &_label {

@@ -6,13 +6,17 @@
         height: var(--ico--star-size);
         svg {width: 100%; height: 100%;}   
 
-        &:hover { color: #ededed; }   
+        @include hover {
+            &:hover { color: #ededed; }   
+        }
     }
     // is_active
     &.is_active {
         .ico_star {
             color: #F7C926; 
-            &:hover { color: #fce8a1; }
+            @include hover {
+                &:hover { color: #fce8a1; }
+            }
         }
     }
 }

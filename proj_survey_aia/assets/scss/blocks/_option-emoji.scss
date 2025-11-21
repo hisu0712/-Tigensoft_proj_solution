@@ -39,60 +39,73 @@
         background-image: url("/assets/icons/emoji/default/ico_veryhappy.svg");
     }
     // hover
-    &:hover {
-        .ico_emoji__veryUnhappy {
-            background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
-        }
-        .ico_emoji__unhappy {
-            background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
-        }
-        .ico_emoji__neutral {
-            background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
-        }
-        .ico_emoji__happy {
-            background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
-        }
-        .ico_emoji__veryhappy {
-            background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
-        }
-        // label
-        &:not(.is_disabled).bl_emoji__veryUnhappy {
-            .bl_emoji_label { display: block; }
-        }
-        &:not(.is_disabled).bl_emoji__unhappy {
-            .bl_emoji_label { display: block; }
-        }
-        &:not(.is_disabled).bl_emoji__neutral {
-            .bl_emoji_label { display: block; }
-        }
-        &:not(.is_disabled).bl_emoji__happy {
-            .bl_emoji_label { display: block; }
-        }
-        &:not(.is_disabled).bl_emoji__veryhappy {
-            .bl_emoji_label { display: block; }
+    @include hover {
+        &:hover {
+            .ico_emoji__veryUnhappy {
+                background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
+            }
+            .ico_emoji__unhappy {
+                background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
+            }
+            .ico_emoji__neutral {
+                background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
+            }
+            .ico_emoji__happy {
+                background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
+            }
+            .ico_emoji__veryhappy {
+                background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
+            }
+            // label
+            &:not(.is_disabled).bl_emoji__veryUnhappy {
+                .bl_emoji_label { display: block; }
+            }
+            &:not(.is_disabled).bl_emoji__unhappy {
+                .bl_emoji_label { display: block; }
+            }
+            &:not(.is_disabled).bl_emoji__neutral {
+                .bl_emoji_label { display: block; }
+            }
+            &:not(.is_disabled).bl_emoji__happy {
+                .bl_emoji_label { display: block; }
+            }
+            &:not(.is_disabled).bl_emoji__veryhappy {
+                .bl_emoji_label { display: block; }
+            }
         }
     }
+    
     // is_active
     &.is_active {
         .ico_emoji__veryUnhappy {
             background-image: url("/assets/icons/emoji/selected/ico_veryUnhappy_selected.svg");
-            &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg"); }
+            @include hover {
+                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg"); }
+            }
         }
         .ico_emoji__unhappy {
             background-image: url("/assets/icons/emoji/selected/ico_unhappy_selected.svg");
-            &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg"); }
+            @include hover {
+                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg"); }
+            }
         }
         .ico_emoji__neutral {
             background-image: url("/assets/icons/emoji/selected/ico_neutral_selected.svg");
-            &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg"); }
+            @include hover {
+                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg"); }
+            }
         }
         .ico_emoji__happy {
             background-image: url("/assets/icons/emoji/selected/ico_happy_selected.svg");
-            &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg"); }
+            @include hover {
+                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg"); }
+            }
         }
         .ico_emoji__veryhappy {
             background-image: url("/assets/icons/emoji/selected/ico_veryhappy_selected.svg");
-            &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg"); }
+            @include hover {
+                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg"); }
+            }
         }
         // label
         &.bl_emoji__veryUnhappy {

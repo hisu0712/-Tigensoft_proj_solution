@@ -309,8 +309,10 @@ html {
   background: var(--c-primary);
   border-color: transparent;
 }
-.el_btn.is_active:hover {
-  background: var(--btn--c-hover);
+@media (hover: hover) and (pointer: fine) {
+  .el_btn.is_active:hover {
+    background: var(--btn--c-hover);
+  }
 }
 
 .el_select {
@@ -366,11 +368,11 @@ html {
   display: block;
 }
 
-.bl_optScale [class^=bl_optScale_A] {
+.bl_optScale_list {
   display: flex;
   gap: var(--gap-xs);
 }
-.bl_optScale [class^=bl_optScale_A] .el_select {
+.bl_optScale_list .el_select {
   flex: 1;
 }
 .bl_optScale_label {
@@ -396,14 +398,18 @@ html {
   width: 100%;
   height: 100%;
 }
-.el_star .ico_star:hover {
-  color: #ededed;
+@media (hover: hover) and (pointer: fine) {
+  .el_star .ico_star:hover {
+    color: #ededed;
+  }
 }
 .el_star.is_active .ico_star {
   color: #F7C926;
 }
-.el_star.is_active .ico_star:hover {
-  color: #fce8a1;
+@media (hover: hover) and (pointer: fine) {
+  .el_star.is_active .ico_star:hover {
+    color: #fce8a1;
+  }
 }
 
 .bl_optStar {
@@ -450,65 +456,77 @@ html {
 .bl_emoji .ico_emoji__veryhappy {
   background-image: url("/assets/icons/emoji/default/ico_veryhappy.svg");
 }
-.bl_emoji:hover .ico_emoji__veryUnhappy {
-  background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
-}
-.bl_emoji:hover .ico_emoji__unhappy {
-  background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
-}
-.bl_emoji:hover .ico_emoji__neutral {
-  background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
-}
-.bl_emoji:hover .ico_emoji__happy {
-  background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
-}
-.bl_emoji:hover .ico_emoji__veryhappy {
-  background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
-}
-.bl_emoji:hover:not(.is_disabled).bl_emoji__veryUnhappy .bl_emoji_label {
-  display: block;
-}
-.bl_emoji:hover:not(.is_disabled).bl_emoji__unhappy .bl_emoji_label {
-  display: block;
-}
-.bl_emoji:hover:not(.is_disabled).bl_emoji__neutral .bl_emoji_label {
-  display: block;
-}
-.bl_emoji:hover:not(.is_disabled).bl_emoji__happy .bl_emoji_label {
-  display: block;
-}
-.bl_emoji:hover:not(.is_disabled).bl_emoji__veryhappy .bl_emoji_label {
-  display: block;
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji:hover .ico_emoji__veryUnhappy {
+    background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
+  }
+  .bl_emoji:hover .ico_emoji__unhappy {
+    background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
+  }
+  .bl_emoji:hover .ico_emoji__neutral {
+    background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
+  }
+  .bl_emoji:hover .ico_emoji__happy {
+    background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
+  }
+  .bl_emoji:hover .ico_emoji__veryhappy {
+    background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
+  }
+  .bl_emoji:hover:not(.is_disabled).bl_emoji__veryUnhappy .bl_emoji_label {
+    display: block;
+  }
+  .bl_emoji:hover:not(.is_disabled).bl_emoji__unhappy .bl_emoji_label {
+    display: block;
+  }
+  .bl_emoji:hover:not(.is_disabled).bl_emoji__neutral .bl_emoji_label {
+    display: block;
+  }
+  .bl_emoji:hover:not(.is_disabled).bl_emoji__happy .bl_emoji_label {
+    display: block;
+  }
+  .bl_emoji:hover:not(.is_disabled).bl_emoji__veryhappy .bl_emoji_label {
+    display: block;
+  }
 }
 .bl_emoji.is_active .ico_emoji__veryUnhappy {
   background-image: url("/assets/icons/emoji/selected/ico_veryUnhappy_selected.svg");
 }
-.bl_emoji.is_active .ico_emoji__veryUnhappy:hover {
-  background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg");
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji.is_active .ico_emoji__veryUnhappy:hover {
+    background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg");
+  }
 }
 .bl_emoji.is_active .ico_emoji__unhappy {
   background-image: url("/assets/icons/emoji/selected/ico_unhappy_selected.svg");
 }
-.bl_emoji.is_active .ico_emoji__unhappy:hover {
-  background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg");
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji.is_active .ico_emoji__unhappy:hover {
+    background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg");
+  }
 }
 .bl_emoji.is_active .ico_emoji__neutral {
   background-image: url("/assets/icons/emoji/selected/ico_neutral_selected.svg");
 }
-.bl_emoji.is_active .ico_emoji__neutral:hover {
-  background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg");
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji.is_active .ico_emoji__neutral:hover {
+    background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg");
+  }
 }
 .bl_emoji.is_active .ico_emoji__happy {
   background-image: url("/assets/icons/emoji/selected/ico_happy_selected.svg");
 }
-.bl_emoji.is_active .ico_emoji__happy:hover {
-  background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg");
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji.is_active .ico_emoji__happy:hover {
+    background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg");
+  }
 }
 .bl_emoji.is_active .ico_emoji__veryhappy {
   background-image: url("/assets/icons/emoji/selected/ico_veryhappy_selected.svg");
 }
-.bl_emoji.is_active .ico_emoji__veryhappy:hover {
-  background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg");
+@media (hover: hover) and (pointer: fine) {
+  .bl_emoji.is_active .ico_emoji__veryhappy:hover {
+    background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg");
+  }
 }
 .bl_emoji.is_active.bl_emoji__veryUnhappy .bl_emoji_label {
   display: block;
