@@ -204,7 +204,7 @@ html {
   display: flex;
   justify-content: center;
   border-top: 1px solid var(--c-gray);
-  padding: 30px var(--layout-paddingH);
+  padding: 0 var(--layout-paddingH);
   background: var(--c-white);
 }
 
@@ -290,6 +290,7 @@ html {
 }
 
 .bl_bottomBtn {
+  margin: var(--gap-m) 0 var(--gap-xl);
   width: 100%;
 }
 
@@ -649,12 +650,8 @@ html {
 }
 
 .bl_quesT {
-  display: flex;
   word-break: keep-all;
   line-height: var(--lh);
-}
-.bl_quesT_text {
-  display: flex;
 }
 
 .el_descT {

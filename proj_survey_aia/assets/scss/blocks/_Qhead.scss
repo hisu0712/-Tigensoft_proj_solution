@@ -11,13 +11,8 @@
     line-height: var(--lh-l);
 }
 .bl_quesT {
-    display: flex;
     word-break: keep-all;
     line-height: var(--lh);
-
-    &_text {
-        display: flex;
-    }
 }
 .el_descT {
     font-size: var(--fz-s);
