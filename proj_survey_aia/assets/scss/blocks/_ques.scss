@@ -1,0 +1,19 @@
+.bl_quesList {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--ques-gap);
+}
+
+// 기타
+.el_image {
+    aspect-ratio: 16/9;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    margin-bottom: var(--gap-m); // ly
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

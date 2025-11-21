@@ -1,0 +1,7 @@
+@mixin respond($device) {
+  @if $device == moblie {
+    @media screen and (min-width: 564px) {
+      @content;
+    }
+  } 
+}

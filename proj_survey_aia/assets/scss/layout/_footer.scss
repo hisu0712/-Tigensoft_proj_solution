@@ -1,0 +1,22 @@
+.bl_bottomBtn {
+    width: 100%;
+}
+.el_btn {
+    width: 100%;
+    color: var(--c-darkgray);
+    background: var(--c-lightgray);
+    text-align: center;
+    border: 1px solid var(--c-gray);
+    border-radius: var(--borderRadius);
+    padding: 1.25rem 0;
+    transition: color .3s ease, background-color .3s ease;
+    cursor: pointer;
+   
+    &.is_active {
+        color: var(--c-white);
+        background: var(--c-primary);
+        border-color: transparent;
+        
+        &:hover { background: var(--btn--c-hover); }
+    }
+}

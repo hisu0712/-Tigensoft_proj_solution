@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  vertical-align: baseline;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+html,
+body {
+  font-family: "SpoqaHanSansNeo", sans-serif;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  background-color: var(--c-white);
+  color: var(--fc);
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  appearance: none;
+}
+// scrollbar custom
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

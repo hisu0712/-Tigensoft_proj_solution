@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 | AIA+</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="ly_container">
+        <header class="ly_header">
+            <div class="bl_headerNav">
+                <div class="bl_headerNav_btn is_left js_goBack">
+                    <i class="ico_chervonLeft"><img src="/assets/icons/ico_chervonLeft.svg" alt></i>
+                </div>
+                <div class="bl_headerNav_ttl">고객 만족도 조사</div>
+                <div class="bl_headerNav_btn is_right">
+                    <i class="ico_x"><img src="/assets/icons/ico_x.svg" alt></i>
+                </div>
+            </div>
+            <div class="bl_progress js_progress">
+                <div class="bl_progressCount">
+                    <span class="bl_progressCount_now"></span>
+                    <span class="bl_progressCount_total"></span>
+                </div>
+                <div class="bl_progressBar">
+                    <div class="bl_progressBar_fill" style="width: 10%;"></div>
+                </div>
+            </div>
+        </header>
+        <!-- // ly_header -->
+
+        <main class="ly_content">
+            <div class="ly_content_inner">
+                <ul class="bl_quesList js_quesList">
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="el_subT">설문 내용을 확인 후 답변해주세요.</span>
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">1</span>
+                                <span class="bl_quesT_text">.&nbsp;제공된 정보가 도움이 되었나요?</span>
+                            </span>
+                        </div>
+                        <div class="bl_optBtn js_select">
+                            <div class="el_select">아니요</div>
+                            <div class="el_select">네</div>
+                        </div>
+                    </li>
+                    <!-- // bl_quesList_item(객관식 가로) -->
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">2</span>
+                                <span class="bl_quesT_text">.&nbsp;AIA 헬스케어 서비스는 AIA+앱에서만 사용할 수 있다?</span>
+                            </span>
+                        </div>
+                        <div class="el_image">
+                            <img src="/assets/images/sample.png" alt="예시 사진">
+                        </div>
+                        <div class="bl_optBtn js_select">
+                            <div class="el_select">O</div>
+                            <div class="el_select">X</div>
+                        </div>
+                    </li>
+                    <!-- // bl_quesList_item(객관식 o/x) -->
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">3</span>
+                                <span class="bl_quesT_text">.&nbsp;보험금 청구를 중단하신 이유가 궁금해요</span>
+                            </span>
+                            <span class="el_descT">해당하는 이유를 모두 선택해 주세요.</span>
+                        </div>
+                        <ul class="bl_optList js_selectMulti">
+                            <li class="el_select">서류가 준비되지 않았어요</li>
+                            <li class="el_select">어떻게 진행해야 할지 모르겠어요</li>
+                            <li class="el_select">단계가 너무 많아요</li>
+                            <li class="el_select">로딩이 느리거나 오류가 발생해요</li>
+                            <li class="el_select">나중에 이어서 하려고 해요</li>
+                            <li class="el_select">기타</li>
+                        </ul>
+                    </li>
+                    <!-- // bl_quesList_item(객관식 세로) -->
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">4</span>
+                                <span class="bl_quesT_text">.&nbsp;AIA+ 앱에 전반적으로 얼마나 만족하시나요?</span>
+                            </span>
+                            <span class="el_descT">해당 점수를 별로 표현해주세요</span>
+                        </div>
+                        <ul class="bl_optStar js_selectStar">
+                            <li class="el_star"><svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg></li>
+                            <li class="el_star"><svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg></li>
+                            <li class="el_star"><svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg></li>
+                            <li class="el_star"><svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg></li>
+                            <li class="el_star"><svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg></li>
+                        </ul>
+                    </li>
+                    <!-- // bl_quesList_item(점수척도형 별) -->
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">5</span>
+                                <span class="bl_quesT_text">.&nbsp;AIA+덕분에 문제를 쉽게 해결할 수 있었습니까?</span>
+                            </span>
+                        </div>
+                        <div class="bl_optScale">
+                            <!-- bl_otptScale_A3, A4, A5 등등 -->
+                            <ul class="bl_optScale_A5 js_select"> 
+                                <li class="el_select">1</li>
+                                <li class="el_select">2</li>
+                                <li class="el_select">3</li>
+                                <li class="el_select">4</li>
+                                <li class="el_select">5</li>
+                            </ul>
+                            <div class="bl_optScale_label">
+                                <span class="bl_optScale_label_L">전혀 불만족</span>
+                                <span class="bl_optScale_label_R">매우 만족</span>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- // bl_quesList_item(점수척도형 수치) -->
+                    <li class="bl_quesList_item">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">6</span>
+                                <span class="bl_quesT_text">.&nbsp;AIA+덕분에 문제를 쉽게 해결할 수 있었습니까?</span>
+                            </span>
+                            <span class="el_descT">해당 점수를 이모티콘으로 표현해주세요</span>
+                        </div>
+                        <ul class="bl_optEmoji js_select">
+                            <li class="bl_emoji bl_emoji__veryUnhappy">
+                                <i class="ico_emoji ico_emoji__veryUnhappy"></i>
+                                <span class="bl_emoji_label">불편했어요</span>
+                            </li>
+                            <li class="bl_emoji bl_emoji__unhappy">
+                                <i class="ico_emoji ico_emoji__unhappy"></i>
+                                <span class="bl_emoji_label">아쉬웠어요</span>
+                            </li>
+                            <li class="bl_emoji bl_emoji__neutral">
+                                <i class="ico_emoji ico_emoji__neutral"></i>
+                                <span class="bl_emoji_label">보통이에요</span>
+                            </li>
+                            <li class="bl_emoji bl_emoji__happy">
+                                <i class="ico_emoji ico_emoji__happy"></i>
+                                <span class="bl_emoji_label">만족해요</span>
+                            </li>
+                            <li class="bl_emoji bl_emoji__veryhappy">
+                                <i class="ico_emoji ico_emoji__veryhappy"></i>
+                                <span class="bl_emoji_label">정말 좋아요</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- // bl_quesList_item(점수척도형 이모티콘) -->
+                    <li class="bl_quesList_item is_optional">
+                        <div class="bl_Qhead">
+                            <span class="bl_quesT">
+                                <span class="bl_quesT_num">7</span>
+                                <div class="bl_quesT_text">
+                                    <span>.&nbsp;보험금 청구를 중단하신 이유가 궁금해요</span>
+                                    <span class="el_optionT">&nbsp;(선택)</span>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="bl_optText">
+                            <div class="bl_textarea js_textarea">
+                                <textarea maxlength="150" placeholder="정보 보호를 위해 개인정보를 포함하지 않도록 주의해주세요"></textarea>
+                                <div class="bl_textarea_counter">
+                                    <span class="bl_textarea_count"></span>
+                                    <span class="bl_textarea_total"></span>
+                                </div>
+                            </div>
+                            <div class="bl_optText_label">
+                                작성하신 답변은 서비스 개선을 위해 활용됩니다. 개인 상담을 원하시면 홈페이지 
+                                온라인 문의나 AIA생명 고객센터로 연락 부탁드립니다.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- // bl_quesList_item(주관식) -->
+                </ul>
+            </div>
+        </main>
+        <!-- // ly_content -->
+
+        <footer class="ly_footer">
+            <div class="bl_bottomBtn">
+                <button class="el_btn js_btnActive" data-next="/survey-next.html">다음</button>
+            </div>
+        </footer>
+        <!-- // ly_footer -->
+    </div>
+    <!-- // ly_container -->
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
