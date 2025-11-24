@@ -22,6 +22,10 @@
         font-weight: var(--fw-regular);
         white-space: nowrap;
     }
+    // focus
+    &:has(input:focus-visible) {
+        @include focus;
+    }
     // default
     .ico_emoji__veryUnhappy {
         background-image: url("/assets/icons/emoji/default/ico_veryUnhappy.svg");
@@ -80,31 +84,31 @@
         .ico_emoji__veryUnhappy {
             background-image: url("/assets/icons/emoji/selected/ico_veryUnhappy_selected.svg");
             @include hover {
-                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg"); }
+                background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg"); 
             }
         }
         .ico_emoji__unhappy {
             background-image: url("/assets/icons/emoji/selected/ico_unhappy_selected.svg");
             @include hover {
-                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg"); }
+                background-image: url("/assets/icons/emoji/selected_hover/ico_unhappy_selected_hover.svg"); 
             }
         }
         .ico_emoji__neutral {
             background-image: url("/assets/icons/emoji/selected/ico_neutral_selected.svg");
             @include hover {
-                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg"); }
+                background-image: url("/assets/icons/emoji/selected_hover/ico_neutral_selected_hover.svg"); 
             }
         }
         .ico_emoji__happy {
             background-image: url("/assets/icons/emoji/selected/ico_happy_selected.svg");
             @include hover {
-                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg"); }
+                background-image: url("/assets/icons/emoji/selected_hover/ico_happy_selected_hover.svg"); 
             }
         }
         .ico_emoji__veryhappy {
             background-image: url("/assets/icons/emoji/selected/ico_veryhappy_selected.svg");
             @include hover {
-                &:hover { background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg"); }
+                background-image: url("/assets/icons/emoji/selected_hover/ico_veryhappy_selected_hover.svg"); 
             }
         }
         // label

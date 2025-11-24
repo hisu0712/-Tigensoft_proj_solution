@@ -1,26 +1,37 @@
-.el_select {
-    text-align: center;
-    font-size: var(--fz-s);
-    line-height: 1;
-    word-break: keep-all;
-    border-radius: var(--borderRadius);
-    padding: var(--select--p);
+.bl_select {
+    display: flex;
+    justify-content: center;
+    padding: var(--select--p) 0;
     border: 1px solid var(--select--c);
+    border-radius: var(--borderRadius);
     cursor: pointer;
+    @include hover {background-color: var(--select--bc-hover);}
     
-    &.is_active {
-        color: var(--select--c-focus);
-        border-color: var(--select--c-focus);
-        background-color: var(--select--bc-focus);
-        outline: 1px solid var(--select--c-focus);
+    &_txt {
+        font-size: var(--fz-s);
+        line-height: var(--lh-s);
+        word-break: keep-all;
     }
+    // active
+    &.is_active {
+        border-color: var(--select--c-active);
+        background-color: var(--select--bc-active);
+        outline: 1px solid var(--select--c-active);
+        @include hover {  background-color: var(--select--bc-active-hover); }
+        
+        .bl_select_txt { color: var(--select--c-active); }
+    }
+    // focus
+    &:has(input:focus-visible) {
+        @include focus;                 
+    } 
 }
 // 옵션
 .bl_optBtn {
     display: flex;
     gap: var(--gap-s);
 
-    .el_select {
+    .bl_select {
         flex: 1;
     }
 }
@@ -29,20 +40,21 @@
     flex-direction: column;
     gap: var(--gap-s);
 
-    .el_select {
+    .bl_select {
         position: relative;
-        padding-right: 2.1875rem !important;
+        padding-left: var(--select--p-hList) !important;
+        padding-right: calc(var(--gap-s) + var(--select--icon) + var(--select--p-hList)) !important;
         line-height: 1.2 !important;
-        text-align: left !important;
+        justify-content: flex-start;
 
         &::after {
             content: '';
             display: none;
             position: absolute;
-            top: 50%; right: var(--select--p);
+            top: 50%; right: var(--select--p-hList);
             transform: translateY(-50%);
-            width: 1rem;
-            height: 1rem;
+            width: var(--select--icon);
+            height: var(--select--icon);
             background-size: contain;
             background-repeat: no-repeat;
             background-image: url('/assets/icons/ico_check.svg');
@@ -58,7 +70,7 @@
     &_list {
         display: flex;
         gap: var(--gap-xs);
-        .el_select { flex: 1; }
+        .bl_select { flex: 1; }
     }
     &_label {
         display: flex;

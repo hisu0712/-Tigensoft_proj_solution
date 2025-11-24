@@ -92,9 +92,19 @@ html {
   background: #999;
 }
 
+input[type=radio],
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
 :root {
   --c-white: #fff;
   --c-primary: #e00842;
+  --c-focus: #0C6DD2;
   --c-gray: #d6d8da;
   --c-lightgray: #ebeced;
   --c-darkgray: #858b91;
@@ -123,9 +133,13 @@ html {
   --gap-xl: 24px;
   --gap-xxl: 32px;
   --select--c: #858b91;
-  --select--c-focus: #082065;
-  --select--bc-focus: #ebedf3;
-  --select--p: 0.75rem;
+  --select--c-active: #082065;
+  --select--bc-hover: #EDEDED;
+  --select--bc-active: #EBEDF3;
+  --select--bc-active-hover: #DADEE8;
+  --select--p: 14px;
+  --select--p-hList: 16px;
+  --select--icon: 1rem;
   --btn--c-hover: #b30635;
   --layout-paddingH: 20px;
   --headerNav-height: 48px;
@@ -234,6 +248,11 @@ html {
   width: var(--headerNav--icon);
   height: var(--headerNav--icon);
 }
+.bl_headerNav_btn:focus-visible {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
+}
 .bl_headerNav_ttl {
   line-height: var(--lh);
 }
@@ -305,6 +324,11 @@ html {
   transition: color 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
 }
+.el_btn:focus-visible {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
+}
 .el_btn.is_active {
   color: var(--c-white);
   background: var(--c-primary);
@@ -316,28 +340,48 @@ html {
   }
 }
 
-.el_select {
-  text-align: center;
-  font-size: var(--fz-s);
-  line-height: 1;
-  word-break: keep-all;
-  border-radius: var(--borderRadius);
-  padding: var(--select--p);
+.bl_select {
+  display: flex;
+  justify-content: center;
+  padding: var(--select--p) 0;
   border: 1px solid var(--select--c);
+  border-radius: var(--borderRadius);
   cursor: pointer;
 }
-.el_select.is_active {
-  color: var(--select--c-focus);
-  border-color: var(--select--c-focus);
-  background-color: var(--select--bc-focus);
-  outline: 1px solid var(--select--c-focus);
+@media (hover: hover) and (pointer: fine) {
+  .bl_select:hover {
+    background-color: var(--select--bc-hover);
+  }
+}
+.bl_select_txt {
+  font-size: var(--fz-s);
+  line-height: var(--lh-s);
+  word-break: keep-all;
+}
+.bl_select.is_active {
+  border-color: var(--select--c-active);
+  background-color: var(--select--bc-active);
+  outline: 1px solid var(--select--c-active);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_select.is_active:hover {
+    background-color: var(--select--bc-active-hover);
+  }
+}
+.bl_select.is_active .bl_select_txt {
+  color: var(--select--c-active);
+}
+.bl_select:has(input:focus-visible) {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
 }
 
 .bl_optBtn {
   display: flex;
   gap: var(--gap-s);
 }
-.bl_optBtn .el_select {
+.bl_optBtn .bl_select {
   flex: 1;
 }
 
@@ -346,26 +390,27 @@ html {
   flex-direction: column;
   gap: var(--gap-s);
 }
-.bl_optList .el_select {
+.bl_optList .bl_select {
   position: relative;
-  padding-right: 2.1875rem !important;
+  padding-left: var(--select--p-hList) !important;
+  padding-right: calc(var(--gap-s) + var(--select--icon) + var(--select--p-hList)) !important;
   line-height: 1.2 !important;
-  text-align: left !important;
+  justify-content: flex-start;
 }
-.bl_optList .el_select::after {
+.bl_optList .bl_select::after {
   content: "";
   display: none;
   position: absolute;
   top: 50%;
-  right: var(--select--p);
+  right: var(--select--p-hList);
   transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
+  width: var(--select--icon);
+  height: var(--select--icon);
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("/assets/icons/ico_check.svg");
 }
-.bl_optList .el_select.is_active::after {
+.bl_optList .bl_select.is_active::after {
   display: block;
 }
 
@@ -373,7 +418,7 @@ html {
   display: flex;
   gap: var(--gap-xs);
 }
-.bl_optScale_list .el_select {
+.bl_optScale_list .bl_select {
   flex: 1;
 }
 .bl_optScale_label {
@@ -403,6 +448,11 @@ html {
   .el_star .ico_star:hover {
     color: #ededed;
   }
+}
+.el_star:has(input:focus-visible) {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
 }
 .el_star.is_active .ico_star {
   color: #F7C926;
@@ -442,6 +492,11 @@ html {
   font-weight: var(--fw-regular);
   white-space: nowrap;
 }
+.bl_emoji:has(input:focus-visible) {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
+}
 .bl_emoji .ico_emoji__veryUnhappy {
   background-image: url("/assets/icons/emoji/default/ico_veryUnhappy.svg");
 }
@@ -458,34 +513,34 @@ html {
   background-image: url("/assets/icons/emoji/default/ico_veryhappy.svg");
 }
 @media (hover: hover) and (pointer: fine) {
-  .bl_emoji:hover .ico_emoji__veryUnhappy {
+  .bl_emoji:hover:hover .ico_emoji__veryUnhappy {
     background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
   }
-  .bl_emoji:hover .ico_emoji__unhappy {
+  .bl_emoji:hover:hover .ico_emoji__unhappy {
     background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
   }
-  .bl_emoji:hover .ico_emoji__neutral {
+  .bl_emoji:hover:hover .ico_emoji__neutral {
     background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
   }
-  .bl_emoji:hover .ico_emoji__happy {
+  .bl_emoji:hover:hover .ico_emoji__happy {
     background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
   }
-  .bl_emoji:hover .ico_emoji__veryhappy {
+  .bl_emoji:hover:hover .ico_emoji__veryhappy {
     background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
   }
-  .bl_emoji:hover:not(.is_disabled).bl_emoji__veryUnhappy .bl_emoji_label {
+  .bl_emoji:hover:hover:not(.is_disabled).bl_emoji__veryUnhappy .bl_emoji_label {
     display: block;
   }
-  .bl_emoji:hover:not(.is_disabled).bl_emoji__unhappy .bl_emoji_label {
+  .bl_emoji:hover:hover:not(.is_disabled).bl_emoji__unhappy .bl_emoji_label {
     display: block;
   }
-  .bl_emoji:hover:not(.is_disabled).bl_emoji__neutral .bl_emoji_label {
+  .bl_emoji:hover:hover:not(.is_disabled).bl_emoji__neutral .bl_emoji_label {
     display: block;
   }
-  .bl_emoji:hover:not(.is_disabled).bl_emoji__happy .bl_emoji_label {
+  .bl_emoji:hover:hover:not(.is_disabled).bl_emoji__happy .bl_emoji_label {
     display: block;
   }
-  .bl_emoji:hover:not(.is_disabled).bl_emoji__veryhappy .bl_emoji_label {
+  .bl_emoji:hover:hover:not(.is_disabled).bl_emoji__veryhappy .bl_emoji_label {
     display: block;
   }
 }

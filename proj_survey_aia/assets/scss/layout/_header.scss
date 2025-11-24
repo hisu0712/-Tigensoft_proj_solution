@@ -20,6 +20,10 @@
             width: var(--headerNav--icon);
             height: var(--headerNav--icon);
         }
+        // focus
+        &:focus-visible {
+            @include focus;
+        }
     }
     &_ttl {
         line-height: var(--lh);

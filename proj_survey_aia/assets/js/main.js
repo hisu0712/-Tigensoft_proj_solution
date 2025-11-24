@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  jsSelect(".el_select");
+  jsSelect(".bl_select");
   jsSelect(".bl_emoji", true);
-  jsSelectMulti(".el_select");
+  jsSelectMulti(".bl_select");
   jsSelectStar(".el_star");
   jsTextarea();
   jsLoadProgress();
@@ -9,11 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // jsSelect
 function jsSelect(item, disabled = false) {
-  const selects = document.querySelectorAll(`.js_select > ${item}`);
+  const selects = document.querySelectorAll(`.js_select ${item} > input`);
 
   selects?.forEach((el) => {
-    el.addEventListener("click", () => {
-      const sibling = el.parentElement.querySelectorAll(item);
+    el.addEventListener("change", () => {
+      const select = el.closest(item);
+      const sibling = select.parentElement.querySelectorAll(item);
 
       sibling.forEach((opt) => {
         opt.classList.remove("is_active");
@@ -22,9 +23,9 @@ function jsSelect(item, disabled = false) {
         }
       });
 
-      el.classList.add("is_active");
+      select.classList.add("is_active");
       if (disabled) {
-        el.classList.remove("is_disabled");
+        select.classList.remove("is_disabled");
       }
 
       jsUpdateAnswer();
@@ -33,11 +34,12 @@ function jsSelect(item, disabled = false) {
 }
 // jsSelectMulti
 function jsSelectMulti(item) {
-  const selects = document.querySelectorAll(`.js_selectMulti > ${item}`);
+  const selects = document.querySelectorAll(`.js_selectMulti ${item} > input`);
 
   selects?.forEach((el) => {
     el.addEventListener("click", () => {
-      el.classList.toggle("is_active");
+      const select = el.closest(item);
+      select.classList.toggle("is_active");
       jsUpdateAnswer();
     });
   });

@@ -8,6 +8,14 @@
 
 @mixin hover() {
   @media (hover: hover) and (pointer: fine) {
-    @content;
+    &:hover {
+      @content;
+    }
   }
+}
+
+@mixin focus() {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: var(--borderRadius);
 }

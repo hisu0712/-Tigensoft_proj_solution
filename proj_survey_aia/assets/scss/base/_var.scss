@@ -2,6 +2,7 @@
   // color
   --c-white: #fff;
   --c-primary: #e00842;
+  --c-focus: #0C6DD2;
   --c-gray: #d6d8da;
   --c-lightgray: #ebeced;
   --c-darkgray: #858b91;
@@ -41,11 +42,15 @@
   --gap-xl: 24px;
   --gap-xxl: 32px;
 
-  // el_select
+  // bl_select
   --select--c: #858b91;
-  --select--c-focus: #082065;
-  --select--bc-focus: #ebedf3;
-  --select--p: 0.75rem;
+  --select--c-active: #082065;
+  --select--bc-hover: #EDEDED;
+  --select--bc-active: #EBEDF3;
+  --select--bc-active-hover: #DADEE8;
+  --select--p: 14px;
+  --select--p-hList: 16px;
+  --select--icon: 1rem;
 
   // el_btn
   --btn--c-hover: #b30635;

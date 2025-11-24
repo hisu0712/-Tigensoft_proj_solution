@@ -13,13 +13,18 @@
     transition: color .3s ease, background-color .3s ease;
     cursor: pointer;
    
+    // focus
+    &:focus-visible {
+        @include focus;
+    }
+    // active
     &.is_active {
         color: var(--c-white);
         background: var(--c-primary);
         border-color: transparent;
         
         @include hover {
-            &:hover { background: var(--btn--c-hover); }
+            background: var(--btn--c-hover);
         }
     }
 }
