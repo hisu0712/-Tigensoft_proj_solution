@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   jsTextarea();
   jsLoadProgress();
   jsScroll();
+  jsTabDown();
 });
 
 // jsSelect
@@ -23,7 +24,6 @@ function jsSelect(item, disabled = false) {
           opt.classList.add("is_disabled");
         }
       });
-
       select.classList.add("is_active");
       if (disabled) {
         select.classList.remove("is_disabled");
@@ -75,17 +75,23 @@ function jsTextarea() {
     const total = wrap.querySelector(".bl_textarea_total");
     const maxLength = parseInt(ta.getAttribute("maxlength"), 10) || 150;
 
+    count.textContent = 0;
     total.textContent = maxLength;
 
     const update = () => {
       ta.style.height = "auto";
       ta.style.height = ta.scrollHeight + "px";
-
       count.textContent = ta.value.length;
+
+      if (ta.value.trim() !== "") {
+        wrap.classList.add("is_active");
+      } else {
+        wrap.classList.remove("is_active");
+      }
+      jsUpdateAnswer();
     };
 
     ta.addEventListener("input", update);
-    update();
   });
 }
 
@@ -105,7 +111,10 @@ function jsUpdateAnswer() {
   let step = AnsweredItems?.length;
 
   if (pageStep < step) {
-    jsSetProgress();
+    jsStepUp();
+    localStorage.setItem("pageStep", step);
+  } else if (pageStep > step) {
+    jsStepDown();
     localStorage.setItem("pageStep", step);
   }
 }
@@ -113,11 +122,16 @@ function jsUpdateAnswer() {
 function jsLoadProgress() {
   jsProgress();
 }
-function jsSetProgress() {
+function jsStepUp() {
   let surveyStep = Number(localStorage.getItem("surveyStep"));
   surveyStep += 1;
   localStorage.setItem("surveyStep", surveyStep);
-
+  jsProgress();
+}
+function jsStepDown() {
+  let surveyStep = Number(localStorage.getItem("surveyStep"));
+  surveyStep -= 1;
+  localStorage.setItem("surveyStep", surveyStep);
   jsProgress();
 }
 function jsProgress() {
@@ -163,7 +177,7 @@ function jsBtnActive() {
   jsGoNext(btn);
 }
 
-// jsSCroll
+// jsScroll
 function jsScroll() {
   const hasScroll = document.body.scrollHeight > window.innerHeight;
 
@@ -172,6 +186,19 @@ function jsScroll() {
   } else {
     document.body.classList.remove("has_scroll");
   }
+}
+// jsUseMouse
+function jsTabDown() {
+  document.body.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      document.body.classList.add("is_tabDown");
+    } else {
+      document.body.classList.remove("is_tabDown");
+    }
+  });
+  document.body.addEventListener("mousedown", () => {
+    document.body.classList.remove("is_tabDown");
+  });
 }
 
 // jsGoNext

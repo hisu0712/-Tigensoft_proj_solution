@@ -13,16 +13,8 @@
         font-weight: var(--fw-regular);
         line-height: var(--lh-s);
 
-        &::placeholder {
-            color: var(--fc-gray);
-        }
-        // focus
-        &:focus:not(:focus-visible) {
-            outline: none !important;
-        }
-        &:focus-visible{
-            // @include focus;
-        }           
+        &::placeholder { color: var(--fc-gray); }
+        &:focus-visible { outline: none; }
     }
     // bl_textarea_counter
     &_counter {
@@ -49,6 +41,13 @@
             background: var(--fc);
             transform: rotate(15deg);
         }
+    }
+}
+body.is_tabDown {
+    .bl_textarea textarea {
+        &:focus-visible{
+            @include focus;
+        }   
     }
 }
 // bl_optText
