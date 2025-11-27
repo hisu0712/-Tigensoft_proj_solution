@@ -2,9 +2,10 @@
     cursor: pointer;
     .ico_star {
         color: #D6D8DA; // default
+        stroke: var(--ico--c-stroke);
+        stroke-width: 1;
         width: var(--ico--star-size);
         height: var(--ico--star-size);
-        svg {width: 100%; height: 100%;}   
         
         @include hover {
             color: #ededed;
@@ -18,6 +19,8 @@
     &.is_active {
         .ico_star {
             color: #F7C926; 
+            stroke: var(--ico--c-strokeSelected);
+            stroke-width: 2;
             @include hover {
                 color: #fce8a1;
             }

@@ -16,6 +16,13 @@
         &::placeholder {
             color: var(--fc-gray);
         }
+        // focus
+        &:focus:not(:focus-visible) {
+            outline: none !important;
+        }
+        &:focus-visible{
+            // @include focus;
+        }           
     }
     // bl_textarea_counter
     &_counter {

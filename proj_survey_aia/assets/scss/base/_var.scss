@@ -80,6 +80,8 @@
   --ico--star-gap: 13px;
   --ico--emoji-size: 52px;
   --ico--emoji-gap: 13px;
+  --ico--c-stroke: #858B91;
+  --ico--c-strokeSelected: #B18F1B;
 
   @include respond(moblie) {
     // icon
