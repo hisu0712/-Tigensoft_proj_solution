@@ -44,38 +44,36 @@
     }
     // hover
     @include hover {
-        &:hover {
-            .ico_emoji__veryUnhappy {
-                background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
-            }
-            .ico_emoji__unhappy {
-                background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
-            }
-            .ico_emoji__neutral {
-                background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
-            }
-            .ico_emoji__happy {
-                background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
-            }
-            .ico_emoji__veryhappy {
-                background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
-            }
-            // label
-            &:not(.is_disabled).bl_emoji__veryUnhappy {
-                .bl_emoji_label { display: block; }
-            }
-            &:not(.is_disabled).bl_emoji__unhappy {
-                .bl_emoji_label { display: block; }
-            }
-            &:not(.is_disabled).bl_emoji__neutral {
-                .bl_emoji_label { display: block; }
-            }
-            &:not(.is_disabled).bl_emoji__happy {
-                .bl_emoji_label { display: block; }
-            }
-            &:not(.is_disabled).bl_emoji__veryhappy {
-                .bl_emoji_label { display: block; }
-            }
+        .ico_emoji__veryUnhappy {
+            background-image: url("/assets/icons/emoji/hover/ico_veryUnhappy_hover.svg");
+        }
+        .ico_emoji__unhappy {
+            background-image: url("/assets/icons/emoji/hover/ico_unhappy_hover.svg");
+        }
+        .ico_emoji__neutral {
+            background-image: url("/assets/icons/emoji/hover/ico_neutral_hover.svg");
+        }
+        .ico_emoji__happy {
+            background-image: url("/assets/icons/emoji/hover/ico_happy_hover.svg");
+        }
+        .ico_emoji__veryhappy {
+            background-image: url("/assets/icons/emoji/hover/ico_veryhappy_hover.svg");
+        }
+        // label
+        &:not(.is_disabled).bl_emoji__veryUnhappy {
+            .bl_emoji_label { display: block; }
+        }
+        &:not(.is_disabled).bl_emoji__unhappy {
+            .bl_emoji_label { display: block; }
+        }
+        &:not(.is_disabled).bl_emoji__neutral {
+            .bl_emoji_label { display: block; }
+        }
+        &:not(.is_disabled).bl_emoji__happy {
+            .bl_emoji_label { display: block; }
+        }
+        &:not(.is_disabled).bl_emoji__veryhappy {
+            .bl_emoji_label { display: block; }
         }
     }
     
@@ -84,7 +82,7 @@
         .ico_emoji__veryUnhappy {
             background-image: url("/assets/icons/emoji/selected/ico_veryUnhappy_selected.svg");
             @include hover {
-                background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg"); 
+                background-image: url("/assets/icons/emoji/selected_hover/ico_veryUnhappy_selected_hover.svg") !important; 
             }
         }
         .ico_emoji__unhappy {
