@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   jsLoadProgress();
   jsScroll();
   jsTabDown();
+  jsIsFirstPage();
 });
 
 // jsSelect
@@ -142,12 +143,16 @@ function jsProgress() {
   const fillEl = progress.querySelector(".bl_progressBar_fill");
   const totalEl = progress.querySelector(".bl_progressCount_total");
   const nowEl = progress.querySelector(".bl_progressCount_now");
+  const bar = progress.querySelector(".bl_progressBar");
 
   const totalStep = 7; // 개발 시 추가(퍼블에서는 dom요소를 기반으로 체크됨)
   totalEl.textContent = totalStep;
+  bar.setAttribute("aria-valuemax", totalStep);
 
   let currentStep = Number(localStorage.getItem("surveyStep")) || 0;
   nowEl.textContent = currentStep;
+  bar.setAttribute("aria-valuenow", currentStep);
+
   const percent = (currentStep / totalStep) * 100;
   fillEl.style.width = percent + "%";
 
@@ -202,6 +207,7 @@ function jsTabDown() {
 }
 
 // jsGoNext
+let isFirstPage = true;
 let isClicked = false; // 임시 전역 변수
 function jsGoNext(btn) {
   const nextUrl = btn.dataset.next;
@@ -212,7 +218,8 @@ function jsGoNext(btn) {
       if (isClicked) return;
 
       isClicked = true;
-      alert("설문조사를 참여했습니다.", jsGoHome());
+      alert("설문조사를 참여했습니다.");
+      jsGoHome();
       localStorage.removeItem("pageStep");
       localStorage.removeItem("surveyStep");
     });
@@ -226,6 +233,13 @@ function jsGoNext(btn) {
       },
       { once: true }
     );
+  }
+}
+// jsNotFistPage
+function jsIsFirstPage(a = true) {
+  isFirstPage = a;
+  if (isFirstPage) {
+    document.body.classList.add("is_firstPage");
   }
 }
 
