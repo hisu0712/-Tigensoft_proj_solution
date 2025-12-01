@@ -11,20 +11,26 @@
     <div class="ly_container">
         <header class="ly_header">
             <div class="bl_headerNav">
-                <button class="bl_headerNav_btn is_left js_goBack">
-                    <i class="ico_chervonLeft"><img src="/assets/icons/ico_chervonLeft.svg" alt></i>
+                <button type="button" class="bl_headerNav_btn is_left js_goBack" aria-label="이전 화면으로 이동">
+                    <i class="ico_chervonLeft"><img src="/assets/icons/ico_chervonLeft.svg" alt=""></i>
                 </button>
-                <div class="bl_headerNav_ttl">고객 만족도 조사</div>
-                <button class="bl_headerNav_btn is_right">
-                    <i class="ico_x"><img src="/assets/icons/ico_x.svg" alt></i>
+                <h1 class="bl_headerNav_ttl">고객 만족도 조사</h1>
+                <button type="button" class="bl_headerNav_btn is_right" aria-label="설문 닫기">
+                    <i class="ico_x"><img src="/assets/icons/ico_x.svg" alt=""></i>
                 </button>  
             </div>
-            <div class="bl_progress js_progress">
-                <div class="bl_progressCount">
+            <div class="bl_progress js_progress" role="group" aria-label="설문 진행도">
+                <div class="bl_progressCount" id="progress_text" aria-live="polite">
                     <span class="bl_progressCount_now"></span>
                     <span class="bl_progressCount_total"></span>
                 </div>
-                <div class="bl_progressBar">
+                <div class="bl_progressBar" 
+                    role="progressbar" 
+                    aria-valuemin="0"
+                    aria-valuemax="1"
+                    aria-valuenow="0" 
+                    aria-labelledby="progress_text"
+                >
                     <div class="bl_progressBar_fill"></div>
                 </div>
             </div>
@@ -34,10 +40,9 @@
         <main class="ly_content">
             <div class="ly_content_inner">
                 <ul class="bl_quesList js_quesList">
-                    <li class="bl_quesList_item" role="group">
+                    <li class="bl_quesList_item" role="group" aria-labelledby="q1_label">
                         <div class="bl_Qhead">
-                            <span class="el_subT">설문 내용을 확인 후 답변해주세요.</span>
-                            <span class="bl_quesT">
+                            <span class="bl_quesT" id="q1_label">
                                 <span class="el_numT">1</span>.&nbsp;
                                 <span class="bl_quesT_text">보험금 청구를 중단하신 이유가 궁금해요</span>
                             </span>
@@ -71,9 +76,9 @@
                         </div>
                     </li>
                     <!-- // bl_quesList_item(객관식 세로) -->
-                    <li class="bl_quesList_item" role="group">
+                    <li class="bl_quesList_item" role="group" aria-labelledby="q2_label">
                         <div class="bl_Qhead">
-                            <span class="bl_quesT">
+                            <span class="bl_quesT" id="q2_label">
                                 <span class="el_numT">2</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA+ 앱에 전반적으로 얼마나 만족하시나요?</span>
                             </span>
@@ -81,31 +86,31 @@
                         </div>
                         <div class="bl_optStar js_selectStar">
                             <label class="el_star">
-                                <input type="radio" name="q2" value="value값">
+                                <input type="radio" name="q2" value="1" aria-label="1점">
                                 <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="value값">
+                                <input type="radio" name="q2" value="2" aria-label="2점">
                                 <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="value값">
+                                <input type="radio" name="q2" value="3" aria-label="3점">
                                 <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="value값">
+                                <input type="radio" name="q2" value="4" aria-label="4점">
                                 <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="value값">
+                                <input type="radio" name="q2" value="5" aria-label="5점">
                                 <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                         </div>
                     </li>
                     <!-- // bl_quesList_item(점수척도형 별) -->
-                    <li class="bl_quesList_item" role="group">
+                    <li class="bl_quesList_item" role="group" aria-labelledby="q3_label">
                         <div class="bl_Qhead">
-                            <span class="bl_quesT">
+                            <span class="bl_quesT" id="q3_label">
                                 <span class="el_numT">3</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA+덕분에 문제를 쉽게 해결할 수 있었습니까?</span>
                             </span>
@@ -140,9 +145,9 @@
                         </div>
                     </li>
                     <!-- // bl_quesList_item(점수척도형 수치) -->
-                    <li class="bl_quesList_item" role="group">
+                    <li class="bl_quesList_item" role="group" aria-labelledby="q4_label">
                         <div class="bl_Qhead">
-                            <span class="bl_quesT">
+                            <span class="bl_quesT" id="q4_label">
                                 <span class="el_numT">4</span>.&nbsp;
                                 <span class="bl_quesT_text">제공된 정보가 도움이 되었나요?</span>
                             </span>
