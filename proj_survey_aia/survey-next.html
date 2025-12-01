@@ -11,7 +11,7 @@
     <div class="ly_container">
         <header class="ly_header">
             <div class="bl_headerNav">
-                <button type="button" class="bl_headerNav_btn is_left js_goBack" aria-label="이전 화면으로 이동">
+                <button type="button" class="bl_headerNav_btn is_left js_goBack" aria-label="뒤로가기">
                     <i class="ico_chervonLeft"><img src="/assets/icons/ico_chervonLeft.svg" alt=""></i>
                 </button>
                 <h1 class="bl_headerNav_ttl">고객 만족도 조사</h1>
@@ -19,7 +19,7 @@
                     <i class="ico_x"><img src="/assets/icons/ico_x.svg" alt=""></i>
                 </button>  
             </div>
-            <div class="bl_progress js_progress" role="group" aria-label="설문 진행도">
+            <div class="bl_progress js_progress" role="group" aria-label="설문 진행률">
                 <div class="bl_progressCount" id="progress_text" aria-live="polite">
                     <span class="bl_progressCount_now"></span>
                     <span class="bl_progressCount_total"></span>
@@ -104,7 +104,6 @@
                             <span class="bl_quesT" id="q7_label">
                                 <span class="el_numT">7</span>.&nbsp;
                                 <span class="bl_quesT_text">보험금 청구를 중단하신 이유가 궁금해요</span>
-                                <span class="el_optionT">(선택)</span>
                             </span>
                         </div>
                         <div class="bl_optText">
@@ -116,7 +115,7 @@
                                     maxlength="150" 
                                     placeholder="정보 보호를 위해 개인정보를 포함하지 않도록 주의해주세요"
                                 ></textarea>
-                                <div class="bl_textarea_counter">
+                                <div class="bl_textarea_counter" aria-live="polite">
                                     <span class="bl_textarea_count"></span>
                                     <span class="bl_textarea_total"></span>
                                 </div>

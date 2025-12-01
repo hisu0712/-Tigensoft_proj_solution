@@ -24,6 +24,11 @@
         &:focus-visible {
             @include focus;
         }
+        // js_goBack(js 접두사 예외)
+        &.js_goBack {
+            display: none;
+            &.is_active { display: block; }
+        }
     }
     &_ttl {
         line-height: var(--lh);

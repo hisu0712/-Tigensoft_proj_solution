@@ -252,6 +252,12 @@ input[type=checkbox] {
   outline-offset: 3px;
   border-radius: var(--borderRadius);
 }
+.bl_headerNav_btn.js_goBack {
+  display: none;
+}
+.bl_headerNav_btn.js_goBack.is_active {
+  display: block;
+}
 .bl_headerNav_ttl {
   line-height: var(--lh);
 }
@@ -409,7 +415,7 @@ input[type=checkbox] {
   background-repeat: no-repeat;
   background-image: url("/assets/icons/ico_check.svg");
 }
-.bl_optList .bl_select.is_active::after {
+.bl_optList.js_selectMulti .bl_select.is_active::after {
   display: block;
 }
 

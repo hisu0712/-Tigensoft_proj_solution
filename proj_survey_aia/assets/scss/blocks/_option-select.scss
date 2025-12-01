@@ -59,7 +59,10 @@
             background-repeat: no-repeat;
             background-image: url('/assets/icons/ico_check.svg');
         }
-        &.is_active {
+    }
+    // is_active(js 접두사 예외)
+    &.js_selectMulti {
+        .bl_select.is_active {
             &::after {
                 display: block;
             }

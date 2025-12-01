@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   jsScroll();
   jsTabDown();
   jsIsFirstPage();
+  jsOptionInsert();
+  jsGoBack();
 });
 
 // jsSelect
@@ -181,6 +183,41 @@ function jsBtnActive() {
   btn.classList.toggle("is_active", shouldActive);
   jsGoNext(btn);
 }
+// jsOptionInsert
+function jsOptionInsert() {
+  const optionItems = document.querySelectorAll(".is_optional");
+
+  optionItems?.forEach((item) => {
+    const ques = item.querySelector(".bl_quesT");
+    if (!ques) return;
+
+    const hasOption = ques.querySelector(".el_optionT");
+
+    if (!hasOption) {
+      ques.insertAdjacentHTML(
+        "beforeend",
+        '<span class="el_optionT">(선택)</span>'
+      );
+    }
+  });
+}
+// jsIsFirstPage
+function jsIsFirstPage() {
+  const quesNum = document.querySelector(".el_numT").textContent;
+  const goBackBtn = document.querySelector(".js_goBack");
+
+  if (quesNum && Number(quesNum) !== 1) {
+    goBackBtn?.classList.add("is_active");
+  }
+}
+// jsGoBack
+function jsGoBack() {
+  const goBackBtn = document.querySelector(".js_goBack");
+
+  goBackBtn?.addEventListener("click", () => {
+    window.history.back();
+  });
+}
 
 // jsScroll
 function jsScroll() {
@@ -218,8 +255,8 @@ function jsGoNext(btn) {
       if (isClicked) return;
 
       isClicked = true;
-      alert("설문조사를 참여했습니다.");
-      jsGoHome();
+      alert("설문조사를 참여했습니다."); // 개발 시 삭제
+      window.location.href = "/survey-start.html"; // 개발 시 삭제
       localStorage.removeItem("pageStep");
       localStorage.removeItem("surveyStep");
     });
@@ -234,16 +271,4 @@ function jsGoNext(btn) {
       { once: true }
     );
   }
-}
-// jsNotFistPage
-function jsIsFirstPage(a = true) {
-  isFirstPage = a;
-  if (isFirstPage) {
-    document.body.classList.add("is_firstPage");
-  }
-}
-
-// 퍼블
-function jsGoHome() {
-  window.location.href = "/survey-start.html";
 }
