@@ -39,15 +39,15 @@
 
         <main class="ly_content">
             <div class="ly_content_inner">
-                <ul class="bl_quesList js_quesList">
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q1_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q1_label">
+                <div class="bl_quesList js_quesList">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">1</span>.&nbsp;
                                 <span class="bl_quesT_text">보험금 청구를 중단하신 이유가 궁금해요</span>
                             </span>
                             <span class="el_descT">해당하는 이유를 모두 선택해 주세요.</span>
-                        </div>
+                        </legend>
                         <div class="bl_optList js_selectMulti">
                             <label class="bl_select">
                                 <input type="checkbox" name="q1" value="value값">
@@ -74,67 +74,77 @@
                                 <span class="bl_select_txt">기타</span>
                             </label>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(객관식 세로) -->
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q2_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q2_label">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">2</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA+ 앱에 전반적으로 얼마나 만족하시나요?</span>
                             </span>
                             <span class="el_descT">해당 점수를 별로 표현해주세요</span>
-                        </div>
+                        </legend>
                         <div class="bl_optStar js_selectStar">
                             <label class="el_star">
-                                <input type="radio" name="q2" value="1" aria-label="1점">
-                                <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
+                                <input type="radio" name="q2" value="1">
+                                <span class="el_blind">1점</span>
+                                <svg class="ico_star" aria-hidden="true" focusable="false"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="2" aria-label="2점">
-                                <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
+                                <input type="radio" name="q2" value="2">
+                                <span class="el_blind">2점</span>
+                                <svg class="ico_star" aria-hidden="true" focusable="false"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="3" aria-label="3점">
-                                <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
+                                <input type="radio" name="q2" value="3">
+                                <span class="el_blind">3점</span>
+                                <svg class="ico_star" aria-hidden="true" focusable="false"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="4" aria-label="4점">
-                                <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
+                                <input type="radio" name="q2" value="4">
+                                <span class="el_blind">4점</span>
+                                <svg class="ico_star" aria-hidden="true" focusable="false"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                             <label class="el_star">
-                                <input type="radio" name="q2" value="5" aria-label="5점">
-                                <svg class="ico_star"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
+                                <input type="radio" name="q2" value="5">
+                                <span class="el_blind">5점</span>
+                                <svg class="ico_star" aria-hidden="true" focusable="false"><use href="/assets/icons/ico_star.svg#ico_star"></use></svg>
                             </label>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(점수척도형 별) -->
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q3_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q3_label">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">3</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA+덕분에 문제를 쉽게 해결할 수 있었습니까?</span>
                             </span>
-                        </div>
+                        </legend>
                         <div class="bl_optScale">
                             <div class="bl_optScale_list js_select"> 
                                 <label class="bl_select">
                                     <input type="radio" name="q3" value="value값">
+                                    <span class="el_blind">전혀 불만족</span>
                                     <span class="bl_select_txt">1</span> 
                                 </label>
                                 <label class="bl_select">
                                     <input type="radio" name="q3" value="value값">
+                                    <span class="el_blind">불만족</span>
                                     <span class="bl_select_txt">2</span> 
                                 </label>
                                 <label class="bl_select">
                                     <input type="radio" name="q3" value="value값">
+                                    <span class="el_blind">보통</span>
                                     <span class="bl_select_txt">3</span> 
                                 </label>
                                 <label class="bl_select">
                                     <input type="radio" name="q3" value="value값">
+                                    <span class="el_blind">만족</span>
                                     <span class="bl_select_txt">4</span> 
                                 </label>
                                 <label class="bl_select">
                                     <input type="radio" name="q3" value="value값">
+                                    <span class="el_blind">매우 만족</span>
                                     <span class="bl_select_txt">5</span> 
                                 </label>
                             </div>
@@ -143,29 +153,31 @@
                                 <span class="bl_optScale_label_R">매우 만족</span>
                             </div>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(점수척도형 수치) -->
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q4_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q4_label">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">4</span>.&nbsp;
                                 <span class="bl_quesT_text">제공된 정보가 도움이 되었나요?</span>
                             </span>
-                        </div>
+                        </legend>
                         <div class="bl_optBtn js_select">
                             <label class="bl_select">
-                                <input type="radio" name="q4" value="value값">
+                                <input type="radio" name="q4" value="N">
                                 <span class="bl_select_txt">아니요</span>
                             </label>
                             <label class="bl_select">
-                                <input type="radio" name="q4" value="value값">          
+                                <input type="radio" name="q4" value="Y">          
                                 <span class="bl_select_txt">네</span>
                             </label>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(객관식 가로) -->
-                </ul>
+                </div>
+                <!-- bl_quesList -->
             </div>
+            <!-- // ly_content_inner -->
         </main>
         <!-- // ly_content -->
 

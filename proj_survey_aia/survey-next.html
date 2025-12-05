@@ -39,73 +39,79 @@
 
         <main class="ly_content">
             <div class="ly_content_inner">
-                <ul class="bl_quesList js_quesList">
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q5_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q5_label">
+                <div class="bl_quesList js_quesList">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">5</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA 헬스케어 서비스는 AIA+앱에서만 사용할 수 있다?</span>
                             </span>
-                        </div>
+                        </legend>
                         <!-- <div class="el_image">
                             <img src="/assets/images/sample.png" alt="예시 사진">
                         </div> -->
                         <div class="bl_optBtn js_select">
                             <label class="bl_select">
-                                <input type="radio" name="q5" value="value값">
-                                <span class="bl_select_txt">O</span>
+                                <input type="radio" name="q5" value="Y">
+                                <span class="bl_select_txt">
+                                    <span class="el_blind">그렇다</span>
+                                    <span aria-hidden="true">O</span>
+                                </span>
                             </label>
                             <label class="bl_select">
-                                <input type="radio" name="q5" value="value값">
-                                <span class="bl_select_txt">X</span>
+                                <input type="radio" name="q5" value="N">
+                                <span class="bl_select_txt">
+                                    <span class="el_blind">아니다</span>
+                                    <span aria-hidden="true">X</span>
+                                </span>
                             </label>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(객관식 o/x) -->
-                    <li class="bl_quesList_item" role="group" aria-labelledby="q6_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q6_label">
+                    <fieldset class="bl_quesList_item">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">6</span>.&nbsp;
                                 <span class="bl_quesT_text">AIA+덕분에 문제를 쉽게 해결할 수 있었습니까?</span>
                             </span>
                             <span class="el_descT">해당 점수를 이모티콘으로 표현해주세요</span>
-                        </div>
+                        </legend>
                         <div class="bl_optEmoji js_select">
                             <label class="bl_emoji bl_emoji__veryUnhappy">
                                 <input type="radio" name="q6" value="value값">
-                                <i class="ico_emoji ico_emoji__veryUnhappy"></i>
+                                <i class="ico_emoji ico_emoji__veryUnhappy" aria-hidden="true"></i>
                                 <span class="bl_emoji_label">불편했어요</span>
                             </label>
                             <label class="bl_emoji bl_emoji__unhappy">
                                 <input type="radio" name="q6" value="value값">
-                                <i class="ico_emoji ico_emoji__unhappy"></i>
+                                <i class="ico_emoji ico_emoji__unhappy" aria-hidden="true"></i>
                                 <span class="bl_emoji_label">아쉬웠어요</span>
                             </label>
                             <label class="bl_emoji bl_emoji__neutral">
                                 <input type="radio" name="q6" value="value값">
-                                <i class="ico_emoji ico_emoji__neutral"></i>
+                                <i class="ico_emoji ico_emoji__neutral" aria-hidden="true"></i>
                                 <span class="bl_emoji_label">보통이에요</span>
                             </label>
                             <label class="bl_emoji bl_emoji__happy">
                                 <input type="radio" name="q6" value="value값">
-                                <i class="ico_emoji ico_emoji__happy"></i>
+                                <i class="ico_emoji ico_emoji__happy" aria-hidden="true"></i>
                                 <span class="bl_emoji_label">만족해요</span>
                             </label>
                             <label class="bl_emoji bl_emoji__veryhappy">
                                 <input type="radio" name="q6" value="value값">
-                                <i class="ico_emoji ico_emoji__veryhappy"></i>
+                                <i class="ico_emoji ico_emoji__veryhappy" aria-hidden="true"></i>
                                 <span class="bl_emoji_label">정말 좋아요</span>
                             </label>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(점수척도형 이모티콘) -->
-                    <li class="bl_quesList_item is_optional" role="group" aria-labelledby="q7_label">
-                        <div class="bl_Qhead">
-                            <span class="bl_quesT" id="q7_label">
+                    <fieldset class="bl_quesList_item is_optional">
+                        <legend class="bl_Qhead">
+                            <span class="bl_quesT">
                                 <span class="el_numT">7</span>.&nbsp;
                                 <span class="bl_quesT_text">보험금 청구를 중단하신 이유가 궁금해요</span>
                             </span>
-                        </div>
+                        </legend>
                         <div class="bl_optText">
                             <div class="bl_textarea js_textarea">
                                 <textarea 
@@ -125,10 +131,12 @@
                                 온라인 문의나 AIA생명 고객센터로 연락 부탁드립니다.
                             </div>
                         </div>
-                    </li>
+                    </fieldset>
                     <!-- // bl_quesList_item(주관식) -->
-                </ul>
+                </div>
+                <!-- // bl_quesList -->
             </div>
+            <!-- // ly_content_inner -->
         </main>
         <!-- // ly_content -->
 

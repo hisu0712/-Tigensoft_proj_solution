@@ -87,3 +87,10 @@ input[type="checkbox"] {
   height: 0;
   pointer-events: none;
 }
+// fieldset 
+fieldset {
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+  border: 0 !important;
+}
