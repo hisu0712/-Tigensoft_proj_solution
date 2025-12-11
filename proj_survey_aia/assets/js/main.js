@@ -181,6 +181,7 @@ function jsBtnActive() {
   }
 
   btn.classList.toggle("is_active", shouldActive);
+  btn.toggleAttribute("disabled", !shouldActive);
   jsGoNext(btn);
 }
 // jsOptionInsert
