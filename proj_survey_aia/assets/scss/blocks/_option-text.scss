@@ -2,11 +2,13 @@
     position: relative;
 
     textarea {
-        min-height: 118px; // 예외 
+        display: block;
+        height: auto;
+        min-height: var(--ta-minHeight); // 예외 
         width: 100%;
         border: 1px solid var(--c-darkgray);
         border-radius: var(--borderRadius);
-        padding: var(--textarea-paddingV) var(--textarea-paddingH) calc(var(--textarea-paddingV) + var(--gap-xl));
+        padding: var(--ta-paddingV) var(--ta-paddingH) calc(var(--ta-paddingV) + var(--gap-xl));
         overflow: hidden;
         resize: none;
         font-size: var(--fz-s);
@@ -16,13 +18,27 @@
         &::placeholder { color: var(--fc-gray); }
         &:focus-visible { outline: none; }
     }
+    // iOS 확대 대응 방지
+    &.is_scaled { 
+        textarea {
+            width: calc(100% / var(--ta-scale)) !important;
+            padding: calc(var(--ta-paddingV) / var(--ta-scale))
+                     calc(var(--ta-paddingH) / var(--ta-scale))
+                     calc((var(--ta-paddingV) + var(--gap-xl)) / var(--ta-scale)) !important;
+            font-size: 16px !important;
+            line-height: 22px !important;
+            line-height: 1 !important;
+            transform: scale(var(--ta-scale));
+            transform-origin: left top;
+        }
+    }
     // bl_textarea_counter
     &_counter {
         position: absolute;
-        bottom: var(--textarea-paddingV); right: var(--textarea-paddingH);
+        bottom: var(--ta-paddingV); right: var(--ta-paddingH);
         display: flex;
         align-items: center;
-        column-gap: var(--textarea-gap);
+        column-gap: var(--ta-gap);
         font-size: var(--fz-xs);
         color: var(--fc-gray);
         font-weight: var(--fw-regular);
@@ -31,7 +47,7 @@
     &_count {
         display: flex;
         align-items: center;
-        column-gap: var(--textarea-gap);
+        column-gap: var(--ta-gap);
 
         &::after {
             content: '';
