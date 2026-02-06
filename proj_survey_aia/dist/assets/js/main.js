@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
   jsGoBack();
 });
 
+// jsInit
+function jsInit() {
+  // 사용자가 설문을 강제종료했을 때, 진행바가 초기화되지 않는 문제 해결을 위해
+  // 초기화 함수를 설문 접속 시에 실행(개발)
+  localStorage.removeItem("pageStep");
+  localStorage.removeItem("surveyStep");
+}
+
 // jsSelect
 function jsSelect(item, disabled = false) {
   const selects = document.querySelectorAll(`.js_select ${item} > input`);
@@ -69,6 +77,29 @@ function jsSelectStar(item) {
   });
 }
 // jsTextarea
+const getScaleY = (el) => {
+  const t = getComputedStyle(el).transform;
+  if (!t || t === "none") return 1;
+  const m = new DOMMatrixReadOnly(t);
+  return m.d || 1;
+};
+const updateTextarea = (ta, wrap, count) => {
+  ta.style.height = "auto";
+
+  const isScaled = wrap.classList.contains("is_scaled");
+  if (isScaled) {
+    const scaleY = getScaleY(ta);
+    ta.style.height = ta.scrollHeight / scaleY + "px";
+    wrap.style.height = ta.scrollHeight * scaleY + "px";
+  } else {
+    ta.style.height = ta.scrollHeight + "px";
+  }
+
+  count.textContent = ta.value.length;
+  wrap.classList.toggle("is_active", ta.value.trim() !== "");
+
+  jsUpdateAnswer();
+};
 function jsTextarea() {
   const textareas = document.querySelectorAll(".js_textarea");
 
@@ -81,20 +112,10 @@ function jsTextarea() {
     count.textContent = 0;
     total.textContent = maxLength;
 
-    const update = () => {
-      ta.style.height = "auto";
-      ta.style.height = ta.scrollHeight + "px";
-      count.textContent = ta.value.length;
-
-      if (ta.value.trim() !== "") {
-        wrap.classList.add("is_active");
-      } else {
-        wrap.classList.remove("is_active");
-      }
-      jsUpdateAnswer();
-    };
+    const update = () => updateTextarea(ta, wrap, count);
 
     ta.addEventListener("input", update);
+    update();
   });
 }
 
