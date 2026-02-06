@@ -218,6 +218,7 @@ fieldset {
   left: 0;
   right: 0;
   bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0px);
   width: min(var(--w-container), 100%);
   margin: 0 auto;
   display: flex;
